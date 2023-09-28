@@ -16,7 +16,7 @@ The C++ STL is a fundamental part of modern C++ programming, providing a wealth 
 |--------------|-----------|------------|
 | Vectors| Strings | Stack | 
 | Hash Map |  Priority Queue | Linked List       | 
-| Bit Manipulation | Sets  |      | 
+| Bit Manipulation | Sets  | Queue      | 
 |   |  |     |
 
 
@@ -26,8 +26,16 @@ The C++ STL is a fundamental part of modern C++ programming, providing a wealth 
 
 Whether you're a student aiming to ace your C++ exams, a professional developer seeking to improve your skills, or just a curious coder exploring the world of C++, these notes are tailored to meet your needs. We believe that learning should be accessible to all, and our notes are written with clarity and simplicity in mind.
 
+**Extra Resources** 
+1. Top 50 Algorithms: [Google Drive](https://drive.google.com/drive/folders/1nZgUV-6fLf0ECt6x35THyZm07UlYfi8j?usp=drive_link)
+
+  
 **Get Involved**
 
+  
+
 Feel free to explore the notes, open issues, contribute your own insights, or ask questions. Learning is a collaborative journey, and this repository is a platform for all C++ enthusiasts to learn, share, and grow together.
+
+  
 
 So, without further ado, let's dive into the fascinating world of the C++ STL. Happy coding!
