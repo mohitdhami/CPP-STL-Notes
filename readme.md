@@ -28,6 +28,7 @@ Whether you're a student aiming to ace your C++ exams, a professional developer 
 
 **Extra Resources** 
 1. Top 50 Algorithms: [Google Drive](https://drive.google.com/drive/folders/1nZgUV-6fLf0ECt6x35THyZm07UlYfi8j?usp=drive_link)
+2. Data Structures, Build from Scratch: [Google Drive](https://drive.google.com/drive/folders/1PME7mVRcUTyLE6N9R3ZvyIFp0XL5FDuY?usp=sharing)
 
   
 **Get Involved**
