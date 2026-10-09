@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>C++ STL Notes — Complete Interactive Guide | CPP-STL-Notes</title>
+<meta name="description" content="Interactive C++ STL notes: vectors, strings, stack, queue, linked list, hash map, priority queue, sets, bit manipulation + Top 50 algorithms + DS from scratch resources." />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a class="logo" href="#home"><span class="logo-badge">C++</span><span>STL Notes<small>mohitdhami / CPP-STL-Notes</small></span></a>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search notes — try: vector, unordered_map, min heap, substr, popcount…" autocomplete="off" />
+      <button id="clearSearch" class="btn dark small">Clear</button>
+    </div>
+    <a class="btn primary small" href="https://github.com/mohitdhami/CPP-STL-Notes" target="_blank" rel="noopener">★ GitHub Repo</a>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <h3>Contents</h3>
+    <nav class="nav">
+      <a href="#home">🏠 Home <span class="count">start</span></a>
+      <a href="#vectors">📦 Vectors & Containers <span class="count">STL</span></a>
+      <a href="#strings">🔤 Strings, Arrays, Numbers <span class="count">STL</span></a>
+      <a href="#stack-queue-list">🥞 Stack, Queue, Lists <span class="count">STL</span></a>
+      <a href="#hashmap">🗺️ Hash Map / Table <span class="count">STL</span></a>
+      <a href="#heap">⛰️ Heap & Priority Queue <span class="count">STL</span></a>
+      <a href="#sets">🍃 Sets <span class="count">STL</span></a>
+      <a href="#bitmath">🧮 Bit Manipulation <span class="count">STL</span></a>
+      <a href="#complexity">⏱️ Complexity Cheatsheet <span class="count">PDF</span></a>
+      <a href="#top50">🏆 Top 50 Algorithms <span class="count">Drive</span></a>
+      <a href="#dsscratch">🏗️ DS From Scratch <span class="count">Drive</span></a>
+      <a href="#resources">🔗 All Resources <span class="count">links</span></a>
+    </nav>
+    <h3 style="margin-top:14px">Source PDFs</h3>
+    <div class="links">
+      <a class="chip" target="_blank" rel="noopener" href="https://github.com/mohitdhami/CPP-STL-Notes/blob/main/Basic%20STL%20Usage-Gen-3.pdf">Basic STL Usage-Gen-3.pdf</a>
+      <a class="chip" target="_blank" rel="noopener" href="https://github.com/mohitdhami/CPP-STL-Notes/blob/main/Algorithm%20Time%20Complexity.pdf">Algorithm Time Complexity.pdf</a>
+    </div>
+    <p class="muted" style="font-size:12px;margin:12px 8px">Tip: press <code class="inline">Ctrl/Cmd + F</code> or use the top search to filter sections instantly.</p>
+  </aside>
+
+  <main class="content">
+    <div id="noResults">No sections match your search. <button class="btn small" onclick="document.querySelector('#q').value='';document.querySelector('#q').dispatchEvent(new Event('input'))">Reset</button></div>
+
+    <!-- HERO -->
+    <section class="hero" id="home" data-search="home c++ stl notes vectors strings stack queue hash map priority queue sets bit manipulation top 50 algorithms">
+      <p class="kicker" style="color:#7ee0a3">CPP-STL-Notes → interactive website</p>
+      <h1>Master the C++ <span class="hl">Standard Template Library</span></h1>
+      <p>One-stop, beginner-friendly notes on the C++ STL — rebuilt from the <a style="color:#fff" href="https://github.com/mohitdhami/CPP-STL-Notes" target="_blank" rel="noopener">GitHub repo</a> + all 7 <code class="inline">STL Docs</code> Word docs, 2 PDFs, and <b>every linked Google Drive resource</b> (main notes, Top-50 Algorithms, DS-Build-From-Scratch). With copy-paste code, method tables, complexity charts and official references.</p>
+      <div class="hero-meta">
+        <span class="pill">📚 7 note docs</span><span class="pill">📄 2 PDFs</span><span class="pill">💾 3 Drive folders</span><span class="pill">⚡ copy-paste C++17</span><span class="pill">🔍 live search</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn primary" href="#vectors">Start learning →</a>
+        <a class="btn dark" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18WVVMraTw0T_LLcmEXmn0Qet3z_bRc1e?usp=drive_link">📂 Live Notes on Drive</a>
+        <a class="btn dark" href="#resources">🔗 All resources</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>9</b><span>STL topics covered</span></div>
+        <div class="stat"><b>10+</b><span>Drive docs & folders followed</span></div>
+        <div class="stat"><b>50+</b><span>code snippets & methods</span></div>
+        <div class="stat"><b>O(1)</b><span>lookup with search 😉</span></div>
+      </div>
+      <div class="topic-grid">
+        <a class="topic" href="#vectors"><b>📦 Vectors</b><span>dynamic arrays, iterators, sort, find</span></a>
+        <a class="topic" href="#strings"><b>🔤 Strings</b><span>transform, stoi, substr, istringstream</span></a>
+        <a class="topic" href="#stack-queue-list"><b>🥞 Stack / Queue / List</b><span>LIFO, FIFO, list & forward_list</span></a>
+        <a class="topic" href="#hashmap"><b>🗺️ Hash Map</b><span>unordered_map vs map</span></a>
+        <a class="topic" href="#heap"><b>⛰️ Priority Queue</b><span>max-heap, min-heap, comparators</span></a>
+        <a class="topic" href="#sets"><b>🍃 Sets</b><span>set vs unordered_set, dedup trick</span></a>
+        <a class="topic" href="#bitmath"><b>🧮 Bit Manipulation</b><span>shifts, popcount, masking, uintN_t</span></a>
+        <a class="topic" href="#complexity"><b>⏱️ Complexity</b><span>cheatsheet from PDF</span></a>
+        <a class="topic" href="#top50"><b>🏆 Top 50 Algos</b><span>DP, graphs, sorting + review sheet</span></a>
+      </div>
+    </section>
+
+    <!-- VECTORS -->
+    <section class="card" id="vectors" data-search="vector containers 1d 2d push_back pop_back size front back begin end find sort comparator insert erase clear resize count max min numeric_limits">
+      <p class="kicker">STL Docs → Basic STL Usage.docx</p>
+      <h2>📦 Containers & Vectors <span class="tag">&lt;vector&gt; &lt;algorithm&gt; &lt;limits&gt;</span></h2>
+      <p class="muted">A <b>container</b> holds a collection of same-type elements with add / remove / access ops. STL gives you <code class="inline">vector, array, list, map, set…</code> — each tuned for different needs.</p>
+      <p>A <b>vector</b> is a dynamic array that resizes itself. Benefits over raw arrays: grows/shrinks dynamically, bounds-checked access via <code class="inline">at()</code>, easily copied/resized.</p>
+      <div class="note blue"><b>Header:</b> <code class="inline">#include &lt;vector&gt;</code> &nbsp;|&nbsp; Key methods: <code class="inline">push_back, pop_back, size, front, back</code></div>
+
+      <h3 class="sec">Declaration — 1D & 2D</h3>
+<pre><code>// 1-D
+vector&lt;int&gt; v;
+vector&lt;int&gt; v2(size, val);        // size cells filled with val
+vector&lt;int&gt; v3{1,2,3,4,5};
+vector&lt;string&gt; fruits{"Apple","Banana","Orange"};
+
+// 2-D
+vector&lt;vector&lt;int&gt;&gt; m;
+vector&lt;vector&lt;int&gt;&gt; m2{{1,2,3},{4,5,6},{7,8,9}};
+vector&lt;vector&lt;int&gt;&gt; mat(m, vector&lt;int&gt;(n, val)); // m rows x n cols
+</code></pre>
+
+      <h3 class="sec">Traversing</h3>
+<pre><code>// index loop
+for (int i = 0; i &lt; (int)v.size(); i++) cout &lt;&lt; v[i] &lt;&lt; " ";
+// range loop
+for (auto x : v) cout &lt;&lt; x &lt;&lt; " ";
+// iterator
+for (auto it = v.begin(); it != v.end(); ++it) cout &lt;&lt; *it &lt;&lt; " ";
+</code></pre>
+      <div class="note"><b>NOTE:</b> <code class="inline">end()</code> points <i>past</i> the last element — it does not point to a valid element. Always compare with <code class="inline">!= end()</code>.</div>
+
+      <h3 class="sec">Method reference</h3>
+      <div class="method"><code>size() / max_size() / capacity()</code><span>elements count / max possible / currently allocated slots. For 2D: <code class="inline">m.size()</code>=rows, <code class="inline">m[0].size()</code>=cols.</span></div>
+      <div class="method"><code>push_back(x) / pop_back()</code><span>add/remove from back in amortised O(1).</span></div>
+      <div class="method"><code>front() / back()</code><span>first / last element.</span></div>
+      <div class="method"><code>begin() / end()</code><span>iterators to first / past-last element.</span></div>
+      <div class="method"><code>find(b,e,val)</code><span><code class="inline">it = find(v.begin(), v.end(), 4);</code> → iterator to first match or <code class="inline">v.end()</code>. Check <code class="inline">it == v.end()</code> for “not found”. <code class="inline">*it</code> = value, <code class="inline">it - v.begin()</code> = index. You can subtract iterators: <code class="inline">it2 - it1</code> = distance.</span></div>
+      <div class="method"><code>sort(b,e,comp?)</code><span><code class="inline">sort(v.begin(), v.end())</code> ascending; <code class="inline">sort(v.begin(), v.end(), greater&lt;int&gt;())</code> descending. Strings sort by ASCII: <code class="inline">"bC78ip" → "78Cbip"</code>.</span></div>
+      <div class="method"><code>insert(pos,val) / erase(pos) / reverse / clear / resize</code><span><code class="inline">v.insert(v.begin()+i, val)</code>; <code class="inline">v.erase(v.begin()+2)</code> (takes iterator, avoid on huge vectors); <code class="inline">reverse(s.begin(), s.end())</code>; <code class="inline">clear()</code> empties but keeps capacity; <code class="inline">resize(n)</code> fills new slots with 0.</span></div>
+      <div class="method"><code>count / min,max_element / numeric_limits</code><span><code class="inline">count(v.begin(),v.end(),2)</code> (&lt;algorithm&gt;, chars/digits only — not substrings); <code class="inline">*max_element(a.begin(),a.end())</code>; <code class="inline">numeric_limits&lt;int&gt;::max()</code> from <code class="inline">&lt;limits&gt;</code> — portable INT_MAX.</span></div>
+
+      <h3 class="sec">Custom comparator (sort)</h3>
+<pre><code>bool desc(int a, int b){ return a &gt; b; } // true ⇒ a before b
+sort(nums.begin(), nums.end(), desc);
+
+// sort pairs by first, then second
+bool cmp(const pair&lt;int,int&gt;&amp; a, const pair&lt;int,int&gt;&amp; b){
+  if (a.first != b.first) return a.first &lt; b.first;
+  return a.second &lt; b.second;
+}
+vector&lt;pair&lt;int,int&gt;&gt; p{{5,2},{2,9},{1,9},{5,1}};
+sort(p.begin(), p.end(), cmp);
+</code></pre>
+      <div class="note green"><b>Rule:</b> comparator returns <code class="inline">true</code> ⇒ first arg comes before second. Return <code class="inline">false</code> ⇒ opposite order.</div>
+
+      <h3 class="sec">resize() — 1D & 2D pattern from notes</h3>
+<pre><code>vector&lt;int&gt; v1; v1.resize(5);                    // {0,0,0,0,0}
+vector&lt;vector&lt;int&gt;&gt; v2; v2.resize(5, vector&lt;int&gt;(5)); // 5x5 zeros
+</code></pre>
+      <p><span class="tag">source</span> <span class="tag">STL Docs / Basic STL Usage.docx</span> <span class="tag">+ Basic STL Usage-Gen-3.pdf</span></p>
+      <div class="links"><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/container/vector">cppreference: vector</a><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/algorithm/sort">sort</a><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/algorithm/find">find</a><a class="chip" target="_blank" rel="noopener" href="https://cplusplus.com/reference/vector/vector/">cplusplus: vector</a></div>
+    </section>
+
+    <!-- STRINGS -->
+    <section class="card" id="strings" data-search="string transform toupper tolower swap stoi to_string reverse compare substr istringstream isdigit typeid abs fabs isalnum min max int_min int_max">
+      <p class="kicker">STL Docs → Numbers, Arrays, String STL Usage.docx</p>
+      <h2>🔤 Strings, Arrays & Numbers <span class="tag">&lt;string&gt; &lt;utility&gt; &lt;sstream&gt; &lt;cctype&gt;</span></h2>
+
+      <h3 class="sec">Case transform & swap</h3>
+<pre><code>transform(s.begin(), s.end(), s.begin(), ::toupper); // lower → UPPER
+transform(s.begin(), s.end(), s.begin(), ::tolower); // UPPER → lower
+toupper('a'); tolower('Z');                          // single char
+swap(s1[x], s1[y]);  // &lt;utility&gt; — works for int arrays too
+</code></pre>
+
+      <h3 class="sec">string ⇄ int</h3>
+<pre><code>string s = "123"; int n = stoi(s);   // &lt;string&gt;; throws invalid_argument if bad
+string t = to_string(456);             // int → string
+try { stoi("abc"); } catch (const invalid_argument&amp; e){ cout &lt;&lt; e.what(); }
+</code></pre>
+
+      <h3 class="sec">Reverse / compare / substr</h3>
+<pre><code>reverse(s1.begin(), s1.end());          // "Hello" → "olleH"
+s1.compare(s2); // 0 ⇒ equal  |  (s1 == s2) works too
+if (str1 &lt;= str2) { /* dictionary order; UPPER &lt; lower */ }
+string a = str.substr(pos, len);        // substr(pos,len)
+string first = str.substr(0, str.size()/2);
+string second = str.substr(str.size()/2);
+</code></pre>
+      <div class="note"><b>Concat gotcha:</b> <code class="inline">string s = "" + 'a'; // ERROR</code> and <code class="inline">"" + s.back()</code> fail (char ≠ string). Do: <code class="inline">string x=""; x = x + s.back();</code> or use <code class="inline">append()</code>.</div>
+
+      <h3 class="sec">Parsing with istringstream</h3>
+<pre><code>#include &lt;sstream&gt;
+string input = "42 3.14 hello world";
+istringstream iss(input);
+int n; double d; string w1,w2;
+iss &gt;&gt; n &gt;&gt; d &gt;&gt; w1 &gt;&gt; w2;  // 42, 3.14, hello, world
+// reuse:
+iss.clear(); iss.str("");
+</code></pre>
+
+      <h3 class="sec">Char / type helpers</h3>
+      <div class="method"><code>isalnum(c) / isdigit(c)</code><span><code class="inline">&lt;cctype&gt;</code>. Non-zero ⇒ true. Only pass a <code class="inline">char</code>, not a string: <code class="inline">isdigit(str[1])</code>.</span></div>
+      <div class="method"><code>typeid(x).name()</code><span><code class="inline">&lt;typeinfo&gt;</code> — debug helper: <code class="inline">typeid('a').name() // c</code>.</span></div>
+      <div class="method"><code>abs / fabs / min / max / INT_MIN / INT_MAX</code><span><code class="inline">abs(int)</code> (&lt;cstdlib&gt;), <code class="inline">fabs(double)</code> (&lt;cmath&gt;). ⚠️ <code class="inline">abs(s1.length()-s2.length())</code> errors (size_t!) — hoist to <code class="inline">int</code> first. <code class="inline">min(a,b)/max(a,b)</code>; <code class="inline">INT_MIN/INT_MAX</code> from <code class="inline">&lt;climits&gt;</code>.</span></div>
+      <div class="method"><code>char→int digit trick</code><span><code class="inline">int d = ch - '0'; // '5'→5</code> (implicit cast). <code class="inline">(int)ch</code> gives ASCII 53 — wrong!</span></div>
+      <div class="links"><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/string/basic_string">cppreference: string</a><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/io/basic_istringstream">istringstream</a><a class="chip" target="_blank" rel="noopener" href="https://learncpp.com/cpp-tutorial/string-stoi-and-to-string/">learncpp: stoi/to_string</a></div>
+    </section>
+
+    <!-- STACK QUEUE LIST -->
+    <section class="card" id="stack-queue-list" data-search="stack lifo push pop top empty size queue fifo list forward_list push_front push_back pop_front pop_back insert erase remove unique sort">
+      <p class="kicker">STL Docs → Stack, Queue and Linked Lists.docx</p>
+      <h2>🥞 Stack, Queue & Linked Lists <span class="tag">&lt;stack&gt; &lt;queue&gt; &lt;list&gt; &lt;forward_list&gt;</span></h2>
+      <div class="grid2">
+        <div>
+          <h3 class="sec">Stack — LIFO</h3>
+<pre><code>stack&lt;int&gt; st;
+st.push(5); st.push('A');
+st.pop();              // no return!
+int t = st.top();      // peek
+st.empty(); st.size(); // cast: (int)st.size()
+</code></pre>
+        </div>
+        <div>
+          <h3 class="sec">Queue — FIFO</h3>
+<pre><code>queue&lt;int&gt; q;
+q.push(1); q.push(2);
+q.pop();
+q.front(); q.back();
+q.empty(); q.size();
+</code></pre>
+        </div>
+      </div>
+      <h3 class="sec">std::list — doubly linked</h3>
+<pre><code>#include &lt;list&gt;
+list&lt;int&gt; L;
+L.push_back(10); L.push_front(5);
+L.pop_back(); L.pop_front();
+L.insert(it, val); L.erase(it);
+L.size(); L.empty();
+for (auto it=L.begin(); it!=L.end(); ++it) cout &lt;&lt; *it &lt;&lt; " ";
+</code></pre>
+      <h3 class="sec">std::forward_list — singly linked (lighter)</h3>
+<pre><code>#include &lt;forward_list&gt;
+forward_list&lt;int&gt; F{30,20,10}; // push_front only!
+F.push_front(5); F.pop_front();
+F.insert_after(it, 25); F.erase_after(it);
+F.remove(20); F.unique(); F.sort();
+// insert at end via before_begin():
+auto it = F.before_begin(); // then insert_after
+</code></pre>
+      <div class="note blue"><code class="inline">list</code> = 2 pointers/node + bidirectional; <code class="inline">forward_list</code> = 1 pointer/node, forward-only, no <code class="inline">push_back()</code> — but faster & leaner.</div>
+      <div class="links"><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/container/stack">stack</a><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/container/queue">queue</a><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/container/list">list</a><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/container/forward_list">forward_list</a></div>
+    </section>
+
+    <!-- HASHMAP -->
+    <section class="card" id="hashmap" data-search="hash map unordered_map map red black tree hash table insert find count erase iterator bucket">
+      <p class="kicker">STL Docs → Hash Map and Hash Table.docx</p>
+      <h2>🗺️ Hash Map & Hash Table <span class="tag">&lt;unordered_map&gt; &lt;map&gt;</span></h2>
+      <p><i>“Hash Map performs insert / delete / traversal in constant time.”</i> It maps <b>unique key → value</b>.</p>
+      <table><tr><th>unordered_map (Hash Map)</th><th>map (Balanced BST / Red-Black)</th></tr>
+      <tr><td>Hash table, <b>unsorted</b>, avg <b>O(1)</b> insert/delete/find</td><td>Sorted by key, <b>O(log n)</b> insert/delete/find, lexicographic order</td></tr></table>
+<pre><code>unordered_map&lt;string,int&gt; table;
+table["C++"] = 1;                                  // easiest insert
+table.insert(make_pair("C++",1));
+table.insert({"C++",1});
+unordered_map&lt;int, vector&lt;int&gt;&gt; hm;
+hm[0].push_back(1); hm[0].push_back(2); hm[1].push_back(3);
+
+table["C++"]; table.at("C++");                     // fetch
+table.find(key) == table.end();                    // existence?
+table.count("C++"); table.size(); table.erase("C++");
+
+unordered_map&lt;string,int&gt;::iterator it;
+for (it = table.begin(); it != table.end(); ++it)
+  cout &lt;&lt; it-&gt;first &lt;&lt; ": " &lt;&lt; it-&gt;second &lt;&lt; "\n"; // first=key second=value
+</code></pre>
+      <div class="note"><b>NOTE:</b> re-inserting an existing key <b>overwrites</b> it. Fresh keys default to <code class="inline">'\0'/0</code> (int/char) or <code class="inline">""</code> (string) — so <code class="inline">if (mp[k]=='\0')</code> detects “never set” (avoid comparing directly to 0 to dodge real-zero confusion).</div>
+      <div class="note green"><b>Dedup trick (order-preserving):</b> hash-map + array removes duplicates without sorting — same idea as the <code class="inline">unordered_set</code> snippet in Sets.</div>
+      <div class="links"><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/container/unordered_map">unordered_map</a><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/container/map">map</a></div>
+    </section>
+
+    <!-- HEAP -->
+    <section class="card" id="heap" data-search="priority queue heap max-heap min-heap greater push pop top empty size comparator dijkstra">
+      <p class="kicker">STL Docs → Heap and Priority Queue.docx</p>
+      <h2>⛰️ Heap & Priority Queue <span class="tag">&lt;queue&gt; &lt;vector&gt; &lt;functional&gt;</span></h2>
+      <p>A <b>priority_queue</b> is a container <i>adapter</i> over a <b>heap</b> — O(1) peek at min/max, O(log n) push/pop. Default = <b>max-heap</b>.</p>
+<pre><code>priority_queue&lt;int&gt; pq;               // max-heap
+pq.push(10); pq.push(20); pq.push(30);
+while(!pq.empty()){ cout &lt;&lt; pq.top() &lt;&lt; " "; pq.pop(); } // 30 20 10
+
+priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; mn; // min-heap
+priority_queue&lt;pair&lt;int, vector&lt;pair&lt;int,int&gt;&gt;&gt;&gt; cont; // nested example from notes
+</code></pre>
+      <div class="grid2">
+        <div><h3 class="sec">Max-heap</h3><p class="muted">Parent ≥ children, root = max. Array layout: children of <code class="inline">i</code> at <code class="inline">2i+1, 2i+2</code>. Insert/delete O(log n), peek O(1). <code class="inline">priority_queue&lt;int&gt; pq</code> builds one by default.</p></div>
+        <div><h3 class="sec">Min-heap</h3><p class="muted">Parent ≤ children, root = min — ideal for Dijkstra. Duplicates are <i>kept</i> (pop extras as needed).</p></div>
+      </div>
+<pre><code>// custom comparator → min-heap
+struct Cmp {
+  bool operator()(const int&amp; a, const int&amp; b){ return a &gt; b; }
+};
+priority_queue&lt;int, vector&lt;int&gt;, Cmp&gt; pq2;
+// 2nd template param = underlying container (default vector), 3rd = comparator (default less → max-heap)
+</code></pre>
+      <div class="note blue"><code class="inline">operator()</code> overloading = “function-call operator” — the queue calls it to order elements.</div>
+      <div class="links"><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/container/priority_queue">priority_queue</a><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/algorithm/make_heap">make_heap / heaps</a></div>
+    </section>
+
+    <!-- SETS -->
+    <section class="card" id="sets" data-search="set unordered_set ordered hash unique find erase insert clear load_factor dedup duplicates">
+      <p class="kicker">STL Docs → Sets Containers in C++.docx</p>
+      <h2>🍃 Sets <span class="tag">&lt;set&gt; &lt;unordered_set&gt;</span></h2>
+      <p><b>set</b> = unique + <b>sorted</b> (Red-Black tree, O(log n)). <b>unordered_set</b> = unique + <b>hashed, unordered</b> (avg O(1), worst O(n) on collisions).</p>
+<pre><code>#include &lt;set&gt;
+set&lt;int&gt; s{1,2,3,4};
+s.insert(10); s.erase(20);
+if (s.find(20) != s.end()) cout &lt;&lt; "found";
+for (auto it=s.begin(); it!=s.end(); ++it) cout &lt;&lt; *it &lt;&lt; " ";
+// NOTE: no s[i] — use iterators. s.end()==s.find(v) ⇒ absent. 1-arg find (vs 3-arg vector find).
+
+#include &lt;unordered_set&gt;
+unordered_set&lt;string&gt; u{"apple","banana","orange"};
+u.insert("pear"); u.erase("banana");
+</code></pre>
+      <h3 class="sec">Remove duplicates, keep order (from notes)</h3>
+<pre><code>vector&lt;int&gt; dedup(vector&lt;int&gt;&amp; nums){
+  unordered_set&lt;int&gt; seen; vector&lt;int&gt; res;
+  for (int x : nums) if (seen.insert(x).second) res.push_back(x);
+  return res; // insert() → pair&lt;it,bool&gt;; .second==true ⇒ was new
+}
+</code></pre>
+      <div class="note blue"><b>unordered_set notes:</b> hash-based order is arbitrary; <code class="inline">load_factor</code> (default 1.0) = elems/bucket; great for fast lookup / union / intersection; not for ordered iteration.</div>
+      <div class="links"><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/container/set">set</a><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/container/unordered_set">unordered_set</a></div>
+    </section>
+
+    <!-- BIT -->
+    <section class="card" id="bitmath" data-search="bit manipulation shift popcount mask lsb uint8 uint16 uint32 uint64 math geometry">
+      <p class="kicker">STL Docs → Bit Manipulation, Math & Geometry.docx</p>
+      <h2>🧮 Bit Manipulation, Math & Geometry</h2>
+<pre><code>num &lt;&lt; 1;  // ×2  (5 &lt;&lt; 1 → 10) — faster than *2 in contests
+num &gt;&gt; 1;  // ÷2  (5 &gt;&gt; 1 → 2, fraction dropped)
+1 &lt;&lt; n;    // 2^n
+__builtin_popcount(5); // → 2 (count of 1-bits)
+(num &amp; 1);  // LSB check: 5&amp;1==1. 5=0101, 1=0001. Great for masking.
+</code></pre>
+      <div class="note"><b>NOTE (fixed from notes):</b> left-shift multiplies, right-shift divides — the original doc had the two examples swapped. Shifts beat multiply/divide in tight loops.</div>
+      <table><tr><th>Type</th><th>Alias</th><th>Size</th></tr>
+      <tr><td><code class="inline">uint8_t</code></td><td>unsigned char</td><td>1 byte</td></tr>
+      <tr><td><code class="inline">uint16_t</code></td><td>unsigned short</td><td>2 bytes</td></tr>
+      <tr><td><code class="inline">uint32_t</code></td><td>unsigned int</td><td>4 bytes</td></tr>
+      <tr><td><code class="inline">uint64_t</code></td><td>unsigned long long</td><td>8 bytes</td></tr></table>
+      <div class="links"><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/language/operator_arithmetic">cppreference: bit ops</a><a class="chip" target="_blank" rel="noopener" href="https://gcc.gnu.org/onlinedocs/gcc/Other-Builtins.html">__builtin_popcount</a><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/types/integer">fixed-width ints</a></div>
+    </section>
+
+    <!-- COMPLEXITY -->
+    <section class="card" id="complexity" data-search="complexity big-o time sort vector map set unordered_map priority queue algorithm pdf">
+      <p class="kicker">Repo PDFs → Algorithm Time Complexity.pdf</p>
+      <h2>⏱️ Complexity Cheatsheet</h2>
+      <p class="muted">The repo’s <a target="_blank" rel="noopener" href="https://github.com/mohitdhami/CPP-STL-Notes/blob/main/Algorithm%20Time%20Complexity.pdf">Algorithm Time Complexity.pdf</a> is scanned images, so here’s the standard STL summary it covers — verified against cppreference.</p>
+      <table><tr><th>Container</th><th>Access</th><th>Insert / Push</th><th>Erase / Pop</th><th>Find</th></tr>
+      <tr><td><code class="inline">vector</code></td><td>O(1)</td><td>amort. O(1) back</td><td>O(n) mid / O(1) back</td><td>O(n)</td></tr>
+      <tr><td><code class="inline">string</code></td><td>O(1)</td><td>O(1) back</td><td>O(n)</td><td>O(n·m) substr search</td></tr>
+      <tr><td><code class="inline">list / forward_list</code></td><td>O(n)</td><td>O(1) w/ iterator</td><td>O(1) w/ iterator</td><td>O(n)</td></tr>
+      <tr><td><code class="inline">stack / queue</code></td><td>O(1) top/front</td><td>O(1)</td><td>O(1)</td><td>—</td></tr>
+      <tr><td><code class="inline">map / set</code></td><td>O(log n)</td><td>O(log n)</td><td>O(log n)</td><td>O(log n)</td></tr>
+      <tr><td><code class="inline">unordered_map / unordered_set</code></td><td>avg O(1)</td><td>avg O(1)</td><td>avg O(1)</td><td>avg O(1)</td></tr>
+      <tr><td><code class="inline">priority_queue</code></td><td>O(1) top</td><td>O(log n)</td><td>O(log n)</td><td>—</td></tr></table>
+      <table><tr><th>Algorithm (&lt;algorithm&gt;)</th><th>Avg</th><th>Note</th></tr>
+      <tr><td><code class="inline">sort</code></td><td>O(n log n)</td><td>introsort; custom comparator allowed</td></tr>
+      <tr><td><code class="inline">find / count</code></td><td>O(n)</td><td>linear scan; count won’t find substrings</td></tr>
+      <tr><td><code class="inline">reverse</code></td><td>O(n)</td><td>in-place</td></tr>
+      <tr><td><code class="inline">min/max_element</code></td><td>O(n)</td><td>returns iterator</td></tr>
+      <tr><td><code class="inline">binary_search (sorted)</code></td><td>O(log n)</td><td>requires sorted range</td></tr></table>
+    </section>
+
+    <!-- TOP 50 -->
+    <section class="card" id="top50" data-search="top 50 algorithms backtracking dynamic programming greedy graphs mathematical searching sorting string tree review sheet drive">
+      <p class="kicker">Followed link → Top 50 Algorithms Drive folder</p>
+      <h2>🏆 Top 50 Algorithms <span class="tag">Google Drive</span></h2>
+      <p class="muted">Followed from <code class="inline">readme.md → Extra Resources → Top 50 Algorithms</code>. The folder organises must-know patterns + a review sheet:</p>
+      <div class="grid3">
+        <div class="res"><b>🔍 Searching & Sorting</b><p>Binary search, two pointers, merge/quick/heap sort, counting sort.</p></div>
+        <div class="res"><b>🧵 String</b><p>Sliding window, KMP, Rabin-Karp, anagrams, palindromes.</p></div>
+        <div class="res"><b>🌳 Tree & Graphs</b><p>DFS/BFS, Dijkstra, Union-Find, MST, topo-sort, LCA.</p></div>
+        <div class="res"><b>📊 Dynamic Programming</b><p>Knapsack, LIS, LCS, coin change, grid paths.</p></div>
+        <div class="res"><b>💰 Greedy + Math</b><p>Intervals, Huffman, GCD/LCM, sieve, modular arithmetic, geometry.</p></div>
+        <div class="res"><b>↩️ Backtracking + Extra</b><p>N-Queens, subsets, permutations, + <i>Algorithm Review Sheet</i> & <i>Top 50 Must-Know</i> docs.</p></div>
+      </div>
+      <div class="links" style="margin-top:12px"><a class="btn primary small" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1nZgUV-6fLf0ECt6x35THyZm07UlYfi8j?usp=drive_link">Open Top-50 Drive 📂</a>
+      <a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/algorithm">cppreference: algorithms</a><a class="chip" target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/top-50-algorithms/">GFG Top 50</a><a class="chip" target="_blank" rel="noopener" href="https://leetcode.com/studyplan/top-100-liked/">LeetCode Top 100</a></div>
+    </section>
+
+    <!-- DS SCRATCH -->
+    <section class="card" id="dsscratch" data-search="data structures build from scratch vector stack queue linked list hash table tree graph drive">
+      <p class="kicker">Followed link → Data Structures, Build from Scratch Drive folder</p>
+      <h2>🏗️ Data Structures — Build From Scratch</h2>
+      <p class="muted">Followed from <code class="inline">readme.md → Extra Resources → Data Structures, Build from Scratch</code>. Implement each yourself once — then use the STL version with confidence:</p>
+      <div class="grid3">
+        <div class="res"><b>Vector</b><p>Dynamic array: capacity doubling, amortised push.</p></div>
+        <div class="res"><b>Stack / Queue</b><p>Array- and linked-backed LIFO/FIFO + circular buffer.</p></div>
+        <div class="res"><b>Linked List</b><p>Singly/doubly, reversal, cycle detection.</p></div>
+        <div class="res"><b>Hash Table</b><p>Hashing, chaining vs open addressing, load factor.</p></div>
+        <div class="res"><b>Tree</b><p>BST, traversals, AVL/Red-Black intuition.</p></div>
+        <div class="res"><b>Graph</b><p>Adj. list/matrix, BFS/DFS, shortest paths.</p></div>
+      </div>
+      <div class="links" style="margin-top:12px"><a class="btn primary small" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1PME7mVRcUTyLE6N9R3ZvyIFp0XL5FDuY?usp=sharing">Open DS-From-Scratch Drive 📂</a>
+      <a class="chip" target="_blank" rel="noopener" href="https://www.learncpp.com/">learncpp.com</a><a class="chip" target="_blank" rel="noopener" href="https://visualgo.net/">visualgo.net</a></div>
+      <p class="muted" style="margin-top:10px">Main live-notes folder (with <i>Basics and Essentials of C++</i> + <i>Misc</i> extras not in the repo): <a target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18WVVMraTw0T_LLcmEXmn0Qet3z_bRc1e?usp=drive_link">drive.google.com/…/STL-notes</a></p>
+    </section>
+
+    <!-- RESOURCES -->
+    <section class="card" id="resources" data-search="resources links drive github pdf cppreference cplusplus learncpp download">
+      <p class="kicker">Every link in the repo, followed</p>
+      <h2>🔗 All Resources Hub</h2>
+      <div class="res-grid">
+        <div class="res"><b>📦 Original repo</b><p>mohitdhami/CPP-STL-Notes — readme, issues, contributions.</p><div class="links"><a class="chip" target="_blank" rel="noopener" href="https://github.com/mohitdhami/CPP-STL-Notes">GitHub →</a></div></div>
+        <div class="res"><b>📂 Live STL notes (Drive)</b><p>Basic STL, Basics & Essentials of C++, Bit/Math, HashMap, Heap, Misc, Strings, Sets, Stack/Queue/Lists.</p><div class="links"><a class="chip" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/18WVVMraTw0T_LLcmEXmn0Qet3z_bRc1e?usp=drive_link">Open Drive →</a></div></div>
+        <div class="res"><b>🏆 Top 50 Algorithms (Drive)</b><p>Backtracking, DP, Graphs, Greedy, Math, Searching, Sorting, String, Tree + review sheet.</p><div class="links"><a class="chip" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1nZgUV-6fLf0ECt6x35THyZm07UlYfi8j?usp=drive_link">Open Drive →</a></div></div>
+        <div class="res"><b>🏗️ DS Build From Scratch (Drive)</b><p>Vector, Stack, Queue, Linked List, Hash Table, Tree, Graph.</p><div class="links"><a class="chip" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1PME7mVRcUTyLE6N9R3ZvyIFp0XL5FDuY?usp=sharing">Open Drive →</a></div></div>
+        <div class="res"><b>📄 Repo PDFs</b><p>Direct from GitHub (also mirrored in this site’s sidebar).</p><div class="links"><a class="chip" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/mohitdhami/CPP-STL-Notes/main/Basic%20STL%20Usage-Gen-3.pdf">Basic STL Usage-Gen-3 ↓</a><a class="chip" target="_blank" rel="noopener" href="https://raw.githubusercontent.com/mohitdhami/CPP-STL-Notes/main/Algorithm%20Time%20Complexity.pdf">Time Complexity ↓</a></div></div>
+        <div class="res"><b>📚 Official references</b><p>Always cross-check with the standard docs.</p><div class="links"><a class="chip" target="_blank" rel="noopener" href="https://en.cppreference.com/w/cpp/container">cppreference: containers</a><a class="chip" target="_blank" rel="noopener" href="https://cplusplus.com/reference/stl/">cplusplus: STL</a><a class="chip" target="_blank" rel="noopener" href="https://www.learncpp.com/cpp-tutorial/introduction-to-the-standard-template-library/">learncpp: STL intro</a></div></div>
+      </div>
+      <div class="note blue" style="margin-top:14px"><b>Disclaimer (from repo):</b> notes were prepared for personal learning; errors/omissions may exist. Cross-reference official docs and seek additional resources for comprehensive understanding.</div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <hr style="border:none;border-top:1px solid var(--line);margin-bottom:14px" />
+  Built from <a href="https://github.com/mohitdhami/CPP-STL-Notes" target="_blank" rel="noopener">mohitdhami/CPP-STL-Notes</a> + its 3 Google Drive folders. Static site — open <code class="inline">index.html</code> anywhere, no build step. Happy coding! 🚀
+</footer>
+<button id="toTop" title="Back to top">↑</button>
+<script src="app.js"></script>
+</body>
+</html>
